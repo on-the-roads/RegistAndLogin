@@ -2,6 +2,7 @@ package com.user.service;
 
 import com.user.UserBean.User;
 import com.user.UserDao.UserDao;
+import com.user.UserDao.DaoFactory;
 
 /**
  * 
@@ -12,7 +13,8 @@ import com.user.UserDao.UserDao;
  *
  */
 public class UserService {
-	private UserDao dao=new UserDao();
+	//将具体的实现类隐藏到工厂中去
+	private UserDao dao=DaoFactory.getUserDao();
 	
 	//注册功能
 	public   void regist(User user)throws UserException{
